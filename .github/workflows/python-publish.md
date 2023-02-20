@@ -28,6 +28,5 @@ jobs:
       run: |
         python3 checkin.py 
       env: 
-        SERVE: ${{ secrets.SERVE }}
         SCKEY: ${{ secrets.SCKEY }}
         COOKIE: ${{ secrets.COOKIE }}
