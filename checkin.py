@@ -7,13 +7,13 @@ cookie = os.environ["COOKIE"]
 
 def start():
 
-    body = ""
     url = "https://glados.rocks/api/user/checkin"
     url2 = "https://glados.rocks/api/user/status"
     referer = 'https://glados.rocks/console/checkin'
     checkin = requests.post(url, headers={'cookie': cookie, 'referer': referer,'content-type': 'application/json'}, data="""{"token" : "glados.network"}""")
+    print(checkin)
     state = requests.get(url2, headers={'cookie': cookie, 'referer': referer})
-    # print(res)
+    print(state)
 
     if 'message' in checkin.text:
         mess = checkin.json()['message']
